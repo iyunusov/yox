@@ -37,6 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-swipeable-views": "^0.13.5",
+    "@types/redux-logger": "^3.0.12",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "redux-logger": "^3.0.6",

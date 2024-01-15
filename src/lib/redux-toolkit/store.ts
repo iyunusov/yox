@@ -1,5 +1,5 @@
 /* Core */
-import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit'
+import { configureStore, type ThunkAction, type Action, ThunkMiddleware, Dispatch, AnyAction } from '@reduxjs/toolkit'
 import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
@@ -13,7 +13,7 @@ import { middleware } from './middleware'
 export const reduxStore = configureStore({
   reducer,
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(middleware)
+    return getDefaultMiddleware().concat(middleware as ThunkMiddleware<{}, any, Dispatch<AnyAction>>[])
   },
 })
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>()
