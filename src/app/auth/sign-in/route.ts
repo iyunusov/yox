@@ -1,9 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '@/lib/prisma'
+import prisma from '@/lib/prisma/prisma'
 import { NextRequest, NextResponse } from 'next/server'
 
 import { cookies } from "next/headers";
 import { createSessionCookie, getCurrentUser } from "@/lib/firebase/admin";
+import { addUserToPrisma } from '@/lib/prisma/functions';
 
 export async function POST(request: NextRequest) {
   const reqBody = (await request.json()) as { idToken: string };
@@ -25,16 +26,3 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ success: true, data: "Signed in successfully." });
 }
 
-// POST /api/user
-// Required fields in body: name, email
-export async function addUserToPrisma({ id, phoneNumber }: { id: string, phoneNumber: string, }) {
-  const user = await prisma.user.findUnique({ where: { phoneNumber } })
-  if (!user) {
-    await prisma.user.create({
-      data: {
-        id,
-        phoneNumber,
-      }
-    })
-  }
-}
