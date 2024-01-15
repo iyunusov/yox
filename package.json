@@ -9,16 +9,36 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/lab": "^5.0.0-alpha.160",
+    "@mui/material": "latest",
+    "@mui/material-nextjs": "latest",
+    "@prisma/client": "^5.8.0",
+    "@reduxjs/toolkit": "^2.0.1",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0",
+    "material-ui-dropzone": "^3.5.0",
+    "mui-one-time-password-input": "^2.0.0",
+    "mui-tel-input": "^4.0.0",
     "next": "14.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "prisma": "^5.8.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.0.4",
+    "react-swipeable-views": "^0.14.0",
+    "uid": "^2.0.2"
   },
   "devDependencies": {
-    "@types/node": "20.11.0",
-    "@types/react": "18.2.47",
-    "@types/react-dom": "18.2.18",
-    "eslint": "8.56.0",
+    "@types/grecaptcha": "^3.0.7",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
     "eslint-config-next": "14.0.4",
-    "typescript": "5.3.3"
+    "redux-logger": "^3.0.6",
+    "typescript": "^5"
   }
 }
