@@ -1,3 +1,7 @@
+We are using Firebase PhoneNumber authentication service for handling the authentications.
+
+You can use +992902025348 with otp 777777 for Authenticated, as that is assigned in firebase.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

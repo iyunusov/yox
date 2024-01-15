@@ -6,7 +6,7 @@ import Header from '@/components/Header/Header';
 
 export const metadata: Metadata = {
   title: 'Yox E-Commerce App',
-  description: 'App allows product listing, adding to card and product posting when authenticated.',
+  description: 'App allows product listing, and product posting when authenticated.',
 }
 
 export default async function RootLayout({
