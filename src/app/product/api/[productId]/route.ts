@@ -12,6 +12,7 @@ export async function GET(
     })
     return Response.json(product)
   }
+  return Response.json(null, { status: 400 });
 }
 
 export async function DELETE(

@@ -5,7 +5,7 @@ import { fetchProductsOfUser } from "@/utils/fetchers";
 export default async function Page() {
   const currentUser = await getCurrentUser();
   let products: any = [];
-  
+
   if (currentUser) {
     const { uid = '' } = currentUser;
     if (uid) {

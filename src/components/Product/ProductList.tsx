@@ -23,6 +23,10 @@ export default function ProductList({ products: productsProp }: ProductListProps
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters])
 
+  useEffect(() => {
+    setProducts(productsProp);
+  }, [productsProp])
+
   return (
     <Grid container spacing={{ xs: 0, sm: 2, md: 4 }} position={'relative'}>
       {products?.map((product) => {
@@ -30,6 +34,6 @@ export default function ProductList({ products: productsProp }: ProductListProps
           <ProductItem key={product.id} product={product} />
         )
       })}
-  </Grid>
+    </Grid>
   );
 }

@@ -4,9 +4,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useUserSession } from "@/hooks/useUserSession";
 import CloseIcon from '@mui/icons-material/Close';
 import { SyntheticEvent, useState } from "react";
+import { deleteImageFromStorage } from "@/lib/firebase/storage";
 
-interface ProductItemDeleteProps { productId: string; };
-export default function ProductItemDelete ({ productId }: ProductItemDeleteProps) {
+interface ProductItemDeleteProps { productId: string; imageUrl: string; };
+export default function ProductItemDelete ({ productId, imageUrl }: ProductItemDeleteProps) {
   const [open, setOpen] = useState(false);
   const user = useUserSession();
   const pathname = usePathname();
@@ -30,6 +31,7 @@ export default function ProductItemDelete ({ productId }: ProductItemDeleteProps
     })
     const result = await response.json()
     if (result.success) { 
+      await deleteImageFromStorage(imageUrl)
       console.log(result.data);
       router.refresh()
     }

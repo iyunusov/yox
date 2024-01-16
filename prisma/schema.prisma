@@ -16,9 +16,9 @@ model User {
 
 model Product {
   id          Int    @id @default(autoincrement())
-  title       String
-  description String
-  image       String @unique
+  title       String @db.Text
+  description String @db.LongText
+  image       String @db.LongText
   userId      String
   user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 

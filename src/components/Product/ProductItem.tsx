@@ -28,7 +28,7 @@ export default function ProductItem ({ product }: ProductItemProps) {
       >
       <CardActionArea>
         <Card sx={{ maxWidth: 345 }}>
-          <ProductItemDelete productId={id} />
+          <ProductItemDelete productId={id} imageUrl={image} />
           <CardMedia
             component="img"
             alt="preview Image"

@@ -9,7 +9,6 @@ import ProductList from "../Product/ProductList";
 interface ProfileProps { products: Product[] }
 export default function Profile({ products }: ProfileProps) {
   const router = useRouter();
-
   const onPostAnOffer = () => {
     router.push('/offer');
   }
