@@ -23,5 +23,5 @@ export const filtersSlice = createSlice({
 
 /* Types */
 export interface FiltersSliceState {
-  searchTextFilter?: string | null;
+  searchTextFilter?: string | '';
 }
