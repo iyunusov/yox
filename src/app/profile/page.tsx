@@ -1,17 +1,9 @@
 import Profile from "@/components/Profile/Profile";
-import { getCurrentUser } from "@/lib/firebase/admin";
 import { fetchProductsOfUser } from "@/utils/fetchers";
+export const dynamic = 'force-dynamic';
 
 export default async function Page() {
-  const currentUser = await getCurrentUser();
-  let products: any = [];
-
-  if (currentUser) {
-    const { uid = '' } = currentUser;
-    if (uid) {
-      products = (await fetchProductsOfUser(uid))?.products;
-    }
-  }
+  const products = (await fetchProductsOfUser())?.products || null;
 
   return (
     <Profile products={products} />

@@ -6,14 +6,14 @@ import ProductItem from './ProductItem';
 import { selectFilters, useSelector } from '@/lib/redux-toolkit';
 import { useEffect, useState } from 'react';
 
-interface ProductListProps { products: Product[] };
+interface ProductListProps { products: Product[] | null };
 export default function ProductList({ products: productsProp }: ProductListProps) {
   const [products, setProducts] = useState(productsProp);
   const filters = useSelector(selectFilters);
   
   useEffect(() => {
     const { searchTextFilter: _searchTextFilter } = filters;
-    if (_searchTextFilter) {
+    if (_searchTextFilter && productsProp) {
       const searchTextFilter = _searchTextFilter.toLowerCase();
       const filteredProducts = productsProp.filter(({ title, description }) => 
         title.toLowerCase().includes(searchTextFilter) || description.toLowerCase().includes(searchTextFilter));

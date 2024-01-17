@@ -4,7 +4,7 @@ import { Paper } from '@mui/material';
 import { Product } from '@/types/product';
 import ProductList from '../Product/ProductList';
 
-interface LandingProps { products: Product[] };
+interface LandingProps { products: Product[] | null };
 export default function Landing({ products }: LandingProps) {
   return (
     <Paper

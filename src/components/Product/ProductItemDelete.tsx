@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { SyntheticEvent, useState } from "react";
 import { deleteImageFromStorage } from "@/lib/firebase/storage";
 
-interface ProductItemDeleteProps { productId: string; imageUrl: string; };
+interface ProductItemDeleteProps { productId: number; imageUrl: string; };
 export default function ProductItemDelete ({ productId, imageUrl }: ProductItemDeleteProps) {
   const [open, setOpen] = useState(false);
   const user = useUserSession();

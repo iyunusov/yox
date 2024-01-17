@@ -1,33 +1,41 @@
-const url = `${process.env.VERCEL_ENV === 'development' ? 'http': 'https'}://${process.env.VERCEL_URL}`
+import { getCurrentUser } from "@/lib/firebase/admin";
+import prisma from "@/lib/prisma/prisma";
+
 //Fetches a single product.
 export const fetchProductById = async (productId: string) => {
   try {
-    const res = await fetch(`${url}/product/api/${productId}`)
-    return await res.json()
+    return await prisma.product.findUnique({
+      where: { id: Number(productId) },
+    })
   } catch (error) {
     console.log(error);
-    Promise.reject(null);
   }
+  return null;
 }
 
 //Fetches all products of signed in user.
-export const fetchProductsOfUser = async (uid: string) => {
+export const fetchProductsOfUser = async () => {
   try {
-    const res = await fetch(`${url}/profile/api/${uid}`)
-    return await res.json()
+    const currentUser = await getCurrentUser();  
+    const { uid } = currentUser || {};
+    if (uid) {
+      return await prisma.user.findUnique({
+        where: { id: uid },
+        include: { products: true },
+      })
+    }
   } catch (error) {
     console.log(error);
-    Promise.reject(null);
   }
+  return null;
 }
 
 //Fetches all available products.
 export const fetchAllProducts = async () => {
   try {
-    const res = await fetch(`${url}/product/api/all`,  { cache: 'no-store' })
-    return await res.json();
+    return await prisma.product.findMany()
   } catch (error) {
     console.log(error);
-    Promise.reject(null)
   }
+  return null;
 }

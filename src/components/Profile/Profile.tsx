@@ -6,7 +6,7 @@ import { onAuthStateChanged } from "@/lib/firebase/auth";
 import { Product } from "@/types/product";
 import ProductList from "../Product/ProductList";
 
-interface ProfileProps { products: Product[] }
+interface ProfileProps { products: Product[] | null }
 export default function Profile({ products }: ProfileProps) {
   const router = useRouter();
   const onPostAnOffer = () => {
