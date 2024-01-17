@@ -1,9 +1,7 @@
 import prisma from '@/lib/prisma/prisma'
-import { getAuth } from '@firebase/auth'
 import { NextRequest } from 'next/server'
 
 // POST /api/post
-// Required fields in body: title, uid, imageUrl
 export async function POST(
   request: NextRequest,
 ) {

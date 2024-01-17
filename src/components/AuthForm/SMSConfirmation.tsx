@@ -1,5 +1,4 @@
 "use client"
-
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import { Box, Button, FormControl, Theme, Typography } from "@mui/material";
 import React, { Dispatch, SetStateAction, SyntheticEvent } from "react";

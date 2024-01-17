@@ -1,5 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '@/lib/prisma/prisma'
 import { NextRequest, NextResponse } from 'next/server'
 
 import { cookies } from "next/headers";

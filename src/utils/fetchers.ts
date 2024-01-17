@@ -1,4 +1,4 @@
-const url = `${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http': 'https'}://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+const url = `${process.env.VERCEL_ENV === 'development' ? 'http': 'https'}://${process.env.VERCEL_URL}`
 //Fetches a single product.
 export const fetchProductById = async (productId: string) => {
   try {

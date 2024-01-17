@@ -19,10 +19,9 @@ export default function Loading() {
         }}>
         <Box display={'flex'} flexDirection={'row'} gap={2}>
           <CircularProgress />
-          <Typography component={'span'} ml={2}>It is loading, damn it! ;)</Typography>
+          <Typography component={'span'} ml={2}>It is loading ;)</Typography>
         </Box>
       </Paper>
-
     </Box>
   )
 }
